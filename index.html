@@ -8,10 +8,20 @@
 </head>
 <body>
 
-    <h1>Rock Paper Scissors</h1>
-    Play this in the console!
+<h1>Rock Paper Scissors</h1>
+Play this in the console!
 
 <script>
+
+//Computer picks between three options in an array: 'Rock', 'Paper', or 'Scissors'    
+const choice = ['rock', 'paper', 'scissors']
+
+let computerPlay = Math.floor(Math.random() * choice.length);
+console.log(choice[computerPlay]);
+
+//Prompt user for an input of 'Rock', 'Paper', or 'Scissors' (make case insensitive)
+
+//Compare the two options and return string for winning or losing
 
 
 </script>
