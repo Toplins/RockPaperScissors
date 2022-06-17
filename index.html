@@ -28,17 +28,18 @@ console.log(choice[random]);
 function playRound(playerSelection, computerSelection) {
     playerSelection = prompt('Rock, paper, or scissors?')
     computerSelection = choice[random];
+    let userValue = playerSelection.toLowerCase()
     
-    if (playerSelection == computerSelection){
+    if (userValue == computerSelection){
         console.log('It\'s a tie!');
-    }else if (playerSelection == 'ROCK' && computerSelection == 'SCISSORS') {
+    }else if (userValue == 'rock' && computerSelection == 'scissors') {
         console.log('You win!');
-    }else if (playerSelection == 'PAPER' && computerSelection == 'ROCK') {
+    }else if (userValue == 'paper' && computerSelection == 'rock') {
         console.log('You win!');
-    }else if (playerSelection == 'SCISSORS' && computerSelection == 'PAPER') {
+    }else if (userValue == 'scissors' && computerSelection == 'paper') {
         console.log('You win!');
     }else {
-        console.log('You lose!')
+        console.log('You lose!');
     }
 }
 
