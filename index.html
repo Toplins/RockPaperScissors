@@ -13,13 +13,38 @@ Play this in the console!
 
 <script>
 
+//Create rules for computer to understand.
+
 //Computer picks between three options in an array: 'Rock', 'Paper', or 'Scissors'    
+
+
+
 const choice = ['rock', 'paper', 'scissors']
+const random = Math.floor(Math.random() * choice.length);
+console.log(choice[random]);
 
-let computerPlay = Math.floor(Math.random() * choice.length);
-console.log(choice[computerPlay]);
 
+
+function playRound(playerSelection, computerSelection) {
+    playerSelection = prompt('Rock, paper, or scissors?')
+    computerSelection = choice[random];
+    
+    if (playerSelection == computerSelection){
+        console.log('It\'s a tie!');
+    }else if (playerSelection == 'ROCK' && computerSelection == 'SCISSORS') {
+        console.log('You win!');
+    }else if (playerSelection == 'PAPER' && computerSelection == 'ROCK') {
+        console.log('You win!');
+    }else if (playerSelection == 'SCISSORS' && computerSelection == 'PAPER') {
+        console.log('You win!');
+    }else {
+        console.log('You lose!')
+    }
+}
+
+playRound();
 //Prompt user for an input of 'Rock', 'Paper', or 'Scissors' (make case insensitive)
+//let playerSelection = prompt('Rock, Paper, or Scissors?')
 
 //Compare the two options and return string for winning or losing
 
