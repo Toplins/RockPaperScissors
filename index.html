@@ -13,15 +13,9 @@ Play this in the console!
 
 <script>
 
-//Create rules for computer to understand.
-
-//Computer picks between three options in an array: 'Rock', 'Paper', or 'Scissors'    
-
-
-
-
-
-
+let playerScore = 0
+let computerScore = 0
+let roundWinner = ''
 
 function playRound(playerSelection, computerSelection) {
     const choice = ['rock', 'paper', 'scissors']
@@ -34,34 +28,45 @@ function playRound(playerSelection, computerSelection) {
     
     
     if (userValue == computerSelection){
-        console.log('It\'s a tie!');
+        alert('It\'s a tie!');
     }else if (userValue == 'rock' && computerSelection == 'scissors') {
-        console.log('You win!');
+        alert('You win!');
+        playerScore++;
     }else if (userValue == 'paper' && computerSelection == 'rock') {
-        console.log('You win!');
+        alert('You win!');
+        playerScore++;
     }else if (userValue == 'scissors' && computerSelection == 'paper') {
-        console.log('You win!');
+        alert('You win!');
+        playerScore++;
     }else {
-        console.log('You lose!');
+        alert('You lose!');
+        computerScore++;
     }
     return;
 }
 
 function game() {
-    for (let i = 1; i < 6; i++) {
+    for (let i = 1; i < 15; i++) {
     console.log('round' + ' ' + i)
     playRound();
+    console.log(playerScore);
+    console.log(computerScore);
+    if (playerScore === 5) {
+        alert('You win the game!');
+        break;
+    }else if (computerScore === 5){ 
+        alert('The computer beat your sorry ass.')
+        break;
+    }else {
+    //nothing
+    }
  }
+    
 }
 
 game();
 
 
-
-//Prompt user for an input of 'Rock', 'Paper', or 'Scissors' (make case insensitive)
-//let playerSelection = prompt('Rock, Paper, or Scissors?')
-
-//Compare the two options and return string for winning or losing
 
 
 </script>
