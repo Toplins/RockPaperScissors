@@ -19,16 +19,19 @@ Play this in the console!
 
 
 
-const choice = ['rock', 'paper', 'scissors']
-const random = Math.floor(Math.random() * choice.length);
-console.log(choice[random]);
+
 
 
 
 function playRound(playerSelection, computerSelection) {
+    const choice = ['rock', 'paper', 'scissors']
+    const random = Math.floor(Math.random() * choice.length);
+    console.log(choice[random]);
+    
     playerSelection = prompt('Rock, paper, or scissors?')
     computerSelection = choice[random];
     let userValue = playerSelection.toLowerCase()
+    
     
     if (userValue == computerSelection){
         console.log('It\'s a tie!');
@@ -41,9 +44,20 @@ function playRound(playerSelection, computerSelection) {
     }else {
         console.log('You lose!');
     }
+    return;
 }
 
-playRound();
+function game() {
+    for (let i = 1; i < 6; i++) {
+    console.log('round' + ' ' + i)
+    playRound();
+ }
+}
+
+game();
+
+
+
 //Prompt user for an input of 'Rock', 'Paper', or 'Scissors' (make case insensitive)
 //let playerSelection = prompt('Rock, Paper, or Scissors?')
 
